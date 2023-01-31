@@ -1,0 +1,134 @@
+import React from 'react';
+import "./Week2.css";
+//import axios from 'axios';
+import logo from "./logo2.png";
+//import {Link} from "react-router-dom";
+
+class App extends React.Component  {
+   constructor(props, date) {
+	super(props);
+	this.date = new Date();
+	this.hook = 
+    }
+
+
+   render() {
+
+
+    return (
+	<div className="App-body">
+	      <div className="boo">
+	    	<div className="foo">
+	    	        <div className="nav-main">
+	            	    <nav className="navigator">
+		                    	<a href="http://localhost:3000/" rel="noopener noreferrer"  target="_self"  className="link">Home</a>
+		                    	<a href="http://localhost:3000/week1" rel="noopener noreferrer" target="_self" className="link">Week1</a>
+	                        	<a href="http://localhst:3000/week2" rel="noopener noreferrer" target="_self" className="link">Week2</a>
+	                        	<a href="https://www.bigben.com" rel="noopener noreferrer" target="_self" className="link">Week3</a>
+	                        	<a href="https://www.docker.com" rel="noopener noreferrer" target="_self" className="link">Week4</a>
+	                	    </nav>
+	    			<div className="dateTime">
+	    			   Date: {this.date.toLocaleDateString()} {this.date.toLocaleTimeString()}
+	    			</div>
+	    			<img className="logo" src={logo} alt="logo" />
+	            	</div>
+	    	</div>
+
+		<div className="main">
+	        <div className="App-header">
+	            <div className="h1">IBM Full Stack Developer Week 2</div>
+	            <p>React Components</p>
+	    	    <div className="text">
+	        		<div>How do you think data is managed in React? Changes in the component data are managed using state and props in a React application. In addition, you can pass data and state between components. You will discover the three phases of a component lifecycle and the methods used in each phase. Use hands-on experience to connect to an external server from a React page. Learn about the different approaches to test a component. Know about the different testing tools that you can use to test the component without manual verification.
+	        		<hr />
+	        		<span><strong>Learning Objectives</strong></span><br />
+	        		<span className="list">Explain what states and props in React are</span>
+	        		<span className="list">Explain how to pass data and states to components</span>
+	        		<span className="list">Describe the different phases of the lifecycle</span>
+	        		<span className="list">Explain how to connect to an external server from a React page</span>
+	        		<span className="list">Describe the different approaches and tools of component testing</span>
+	    		    </div>
+		        </div>
+		    </div>
+		
+			<div className="todoList">
+
+			</div>
+
+
+    	<div className="aside">
+        	<table>
+        		<caption className="glossary1">Module 2 : Glossary - React Components.</caption>
+            	<thead>
+            	   <tr>
+                		<th>Term</th>
+                		<th>Definition</th>
+                   	</tr>
+            	</thead>
+            	<tbody>
+            	   <tr>
+                		<td>Angular</td>
+                		<td>Angular is a platform for building mobile and desktop web applications</td>
+            	   </tr>
+            	</tbody>
+        	</table>
+        </div>
+
+
+        
+          <div className="footer">
+            <div className="react">&copy; All rights reserved by the IBM</div>
+	        <div className="disclaimer"><strong>Note:</strong> This webpage was created by practicing the React.js while I learned the WebDev.</div>
+          </div>
+
+	     </div>
+       </div>
+    </div>
+    );
+  }
+}
+
+// Hooks
+const todoHook = () => {
+  const [todos, setTodos] = React.useState([]);
+  const [todo, setTodo] = React.useState("");
+
+  function handleSubmit(e) {
+    e.preventDefault();
+
+    const newTodo = {
+      id: new Date().getTime(),
+      text: todo.trim(),
+      completed: false,
+    };
+    if (newTodo.text.length > 0 ) {
+        setTodos([...todos].concat(newTodo));
+        setTodo("");
+
+    } else {
+
+        alert("Enter Valid Task");
+        setTodo(""); 
+    }
+  }
+  return (
+      <div id="todo-list">
+        <h1>Todo List</h1>
+      <form onSubmit={handleSubmit}>
+        <input
+            type="text"
+            onChange={(e) => setTodo(e.target.value)}
+            value={todo}
+        />
+        <button type="submit">Add Todo</button>
+        </form>
+        {todos.map((todo) => <div className="todo" key={todo.id}>
+            <div>{todo.text}</div>
+        </div>)}
+        </div>
+
+  );
+};
+
+
+export default App;

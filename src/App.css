@@ -1,38 +1,131 @@
-.App {
-  text-align: center;
+.App-body {
+  background-color: black;
+  background-image: none;
+  font: 100% system-ui;
 }
 
-.App-logo {
-  height: 40vmin;
+.boo {
+ width: 100%;
+ height: 100px;   
+}
+
+.foo {
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.nav-main {
+    display: inline-flex;
+}
+
+.navigator {
+  position:absolute;
+  top: 50px;
+  right: 50px;
+}
+
+.link {
+    color: rgb(212,175,55);
+    font-size: 20px;
+    font-style: normal;
+    margin-left: 25px;
+    text-decoration: none;
+}
+
+.link:active {
+    color: rgb(212,175,55);
+}
+
+.link:hover,
+.link:focus {
+    color: lightblue;
+    cursor: pointer;
+}
+
+.link:visited {
+    color: ghotwhite;
+    opacity: 0.7;
+    text-decoration: none;
+}
+
+.dateTime {
+  position: absolute;
+  top: 70px;
+  left: 60px; 
+  color: snow; 
+  font-weight: bold;
+}
+
+.logoMain {
+ width: 100px; 
+ height: 50px;
+ position: absolute;
+ top: 10px;
+ left: 90px;
+ filter: brightness(1.5) contrast(1.8);
+}
+
+.main {
+  margin-top: 150px;
+  margin-left: 250px;
+  margin-right: 250px;
+  font-family: "Times New Roman", Helvetica, Arial, Verdana, sans-serif;
+  text-align: center;
+  justify-content: center;
+  background: white;
+}
+
+.h1 {
+  font-size: 50px;
+  color: darkgreen;
+  text-shadow: 2px 2px 2px lightblue;
+}
+
+.p0 {
+    font-size: 20px;
+    letter-spacing: 1.2px;
+    margin-top: 50px;
+}
+
+.badgeMain {
+  margin-top: 50px;
+  width: 400px;
+  height: 50vmin;
   pointer-events: none;
+  border-radius: 50%;
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+  .badgeMain {
+    animation: badge-spin infinite 20s linear;
+   -webkit-animation: badge-spin 20s infinite linear;
+   -moz-animation: badge-spin 20s infinite linear;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
+@keyframes badge-spin {
   from {
     transform: rotate(0deg);
   }
   to {
     transform: rotate(360deg);
   }
+}
+
+.intro {
+    text-align: left; 
+    padding: 10px;
+    margin-top: 20px;
+}
+
+.text_intro {
+    width: 800px;
+    margin: 30px auto;
+    font-family: serif;
+    line-height: 20px;
+}
+
+.footer {
+  margin-top: 80px;
 }
